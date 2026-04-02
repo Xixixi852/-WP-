@@ -1,0 +1,55 @@
+4.2
+
+1.helloword
+
+下载后是docx文件，打开后看到一篇英文文章和很多行复杂字符，没有线索。尝试用010打开。
+
+开头就是zip文件头50 4B 03 04 
+
+![屏幕截图 2026-04-02 212753](C:\Users\l\Pictures\Screenshots\屏幕截图 2026-04-02 212753.png)
+
+但是我们得到的文件却是docx。尝试改变一下他给的文件名，改成zip。
+
+打得开，说明成功了。
+
+点开后打开word 文件，找到setting.xml，发现里面有注释：
+
+<w:compatSetting w:val="15" w:name="compatibilityMode" w:uri="http://schemas.microsoft.com/office/word"/>
+
+</w:compat>
+
+<w:clrSchemeMapping w:bg1="light1" w:t1="dark1" w:bg2="light2" w:t2="dark2" w:accent1="shellmates" w:accent2="{w0RDS_aRE_" w:accent3="JUst_S0M3_ZiP}" w:accent4="accent4" w:accent5="accent5" w:accent6="accent6" w:hyperlink="hyperlink" w:followedHyperlink="followedHyperlink"/>
+
+</w:settings>
+
+注意到有accent1等，有关键词shellmates和{}，尝试把这两个合并为flag上交，但是显示错误。注意到{}中有引号，猜测是不是要删掉，删掉后是对的
+
+
+
+
+
+2.弗拉戈在哪里
+
+下载安装包解压缩发现打不开，用010试试
+
+打开后看到两个压缩包文件
+
+![屏幕截图 2026-04-02 220046](C:\Users\l\Pictures\Screenshots\屏幕截图 2026-04-02 220046.png)
+
+一个是flag.txt一个是notkey.jpg，想尝试提取出来，但是先别急。
+
+往下翻发现了一个貌似是base64 编码
+
+![屏幕截图 2026-04-02 220036](C:\Users\l\Pictures\Screenshots\屏幕截图 2026-04-02 220036.png)
+
+可能是flag，用解码器解码得到了
+
+
+
+
+
+3 弗拉戈在哪里2
+
+鉴于是2，我们直接用010打开
+
+没找到zip文件，滑倒最底下直接看到flag了
